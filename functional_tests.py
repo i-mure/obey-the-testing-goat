@@ -1,4 +1,5 @@
 from selenium import webdriver
+
 from selenium.webdriver.common.keys import Keys
 
 import time
@@ -27,7 +28,7 @@ class NewVisitorTest(unittest.TestCase):
 		)
 
 		inputbox.send_keys('Buy peacock feathers')
-		inputbox.send_keys(Keys.Enter)
+		inputbox.send_keys(Keys.ENTER)
 
 		# Explicit wait to ensure the browser reloads
 		time.sleep(1)
