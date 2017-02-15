@@ -1,5 +1,5 @@
 import time
-from django.test import LiveServerTestCase
+from django.test import TestCase, LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
@@ -65,6 +65,7 @@ class NewVisitorTest(LiveServerTestCase):
 		self.wait_for_row_in_list_table('2: Use peacock feathers to make a fly')
 
 
+
 	def test_can_start_a_list_for_one_user(self):
 		self.wait_for_row_in_list_table('2: Use peacock feathers to make a fly')
 		self.wait_for_row_in_list_table('1: Buy peacock feathers')
@@ -103,6 +104,3 @@ class NewVisitorTest(LiveServerTestCase):
 		page_text = self.browser.find_element_by_tag_name('body').text
 		self.assertNotIn('1: Buy peacock feathers', page_text)
 		self.assertIn('Buy milk', page_text)
-
-
-
